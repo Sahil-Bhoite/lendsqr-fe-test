@@ -1,0 +1,58 @@
+$deep-blue: #545F7D;
+$green: #39CDCC;
+$red: #E4033B;
+
+.button-container{
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  
+  &.filter{
+    background: $green;
+    border: none;
+    color: white;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: 0.2s;
+
+  }
+
+  &.reset{
+    background: transparent;
+    border: 1px solid $deep-blue;
+    color: $deep-blue;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: 0.2s;
+  }
+
+  &.blacklist{
+    background: transparent;
+    color: $red;
+    border: 1px solid $red;
+    letter-spacing: 1.4px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: 0.2s;
+    text-transform: uppercase;
+  }
+  
+  &.activate{
+    background: none;
+    color: $green;
+    border: 1px solid $green;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: 0.2s;
+  }
+
+  &.default{
+    background: $green;
+    border:none;
+    color: white;
+    height: 3rem;
+  }
+}

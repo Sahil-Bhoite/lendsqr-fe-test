@@ -1,0 +1,214 @@
+@import './navigation.mixins.scss';
+
+$blue: #213F7D;
+$dim: #545F7D;
+$green: #39CDCC;
+
+
+
+.top-navbar{
+  position: fixed;
+  z-index: 30;
+  width: 100vw;
+  height: 6.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.875rem 3.75rem 1.875rem 1.875rem;
+  box-shadow: 3px 0px 20px 0px rgba(0, 0, 0, 0.039);
+  background: #FFF;
+  
+  .lendsqr{
+    height: 1.875rem;
+    margin: auto;
+    cursor: pointer;
+    margin-right: 10rem;
+  }
+  .top-options{
+    @include top-options;
+  }
+  .menu-button{
+    display: none;
+    height: max-content;
+    width: 30px;
+    overflow: hidden;
+    cursor: pointer;
+    div{
+      background-color: $blue;
+      height: 3px;
+      width: 100%;
+      margin: 0.25rem 0;
+      transition: 0.2s;
+    }
+
+    &.close{
+      :nth-child(2){
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      :first-child{
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      :last-child{
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+    }
+  }
+}
+
+
+.side-navbar{
+  position: fixed;
+  top: 6.25rem;
+  left: 0px;
+  height: calc(100vh - 5.56rem);
+  min-height: calc(100vh - 5.56rem);
+  width: 17.5rem;
+  background-color: #fff;
+  box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.04);
+  overflow-y: auto;
+
+  .top-options{
+    @include top-options;
+    display: none;
+  }
+
+  .side-nav-options{
+    padding-top:  2.5rem;
+    margin-bottom: 4.5rem;
+
+    .sub-headings{
+      color: $dim;
+      padding-left: 1.875rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      margin:  2.5rem 0 0.625rem 0;
+
+      &.dashboard{
+        display: flex; 
+        gap: 10px;
+        font-size: 1rem;
+        font-weight: 400;
+        opacity: 0.6;
+      }
+    }
+    ul{
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap:10px;
+
+      li{
+        .nav-link{
+          display: flex;
+          align-items: center;
+          padding-left: 1.875rem;
+          height: 40px;
+          text-decoration: none;
+          color: $blue;
+          transition: 0.1s;
+          &:active{
+            pointer-events: none;
+          }
+
+          &.organization{
+            opacity: 1;
+            img, p{
+              opacity: 1;
+            }
+          }
+          img{
+            opacity:0.5;
+            height: 1rem;
+            width: 1rem;
+            margin-right: 10px;
+            
+            &.arrow-down{
+              margin: 10px;
+              height:0.875rem;
+              width: 0.875rem;
+              
+            }
+          }
+          p{
+            opacity: 0.5;
+            font-weight: 400;
+          }
+          
+          &:hover{
+            background-color: #f3fcfc;
+            img,p{
+              opacity: 1;
+            }
+          }
+          
+          &.active-link{
+            border-left: 3px solid $green;
+            background-color: #f3fcfc;
+            img,p{
+              opacity: 1;
+            }
+
+            &:active{
+              pointer-events: unset;
+            }
+          }
+        }
+      }
+    }
+  }
+  .side-nav-footer{
+    padding:1.25rem 0 1.25rem 2rem;
+    border-top: 1px solid rgba(33, 64, 125, 0.1);
+    .sub-heading{
+      display: flex;
+      gap: 10px;
+      margin-bottom: 2.5rem;
+      cursor: pointer;
+    }
+  }
+}
+
+
+
+
+// Media Queries for Responsive Mode
+
+@media screen and (max-width: 900px) {
+
+  .top-navbar{
+    z-index: 30;
+    padding-right: 4rem;
+
+    @media (hover: none){
+      padding-right: 1.875rem;
+    }
+    
+    .top-options{
+      display: none;
+    }
+    .menu-button{
+      display: block;
+    }
+  }
+
+  .side-navbar{
+    width:100%;
+    position: fixed;
+    top: 6.25rem;
+    z-index: 50;
+    min-height: 80vh;
+    transition: 0.2s;
+    transform: translateX(-100%);
+
+    .top-options-container{
+      padding: 0 1.875rem;
+      .top-options{
+        display: flex;
+      }
+    }
+    &.open{
+      transform: translateX(0);
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.layout{
+  height: max-content;
+  font-family: 'Work Sans', sans-serif;
+  margin: 0;
+  background: #FBFBFB;
+  main{
+    position: absolute;
+    display: flex;
+    top: 6.45rem;
+    left: 0;
+    width: 100%;
+    
+    &.overflow-hidden{
+      top: 0px;
+      height: 100vh;
+    }
+
+    @media screen and (min-width: 900px){
+      left: 17.75rem;
+      width: calc(100vw - 19rem);
+    }
+
+  } 
+}
