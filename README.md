@@ -83,4 +83,3 @@ src/
 ## Contact
 Sahil Bhoite
 - Portfolio: [https://sahil-bhoite.github.io/Portfolio/](https://sahil-bhoite.github.io/Portfolio/)
-- Project Link: [https://github.com/[your-username]/lendsqr-fe-test](https://github.com/[your-username]/lendsqr-fe-test)
